@@ -1,6 +1,6 @@
 package com.serper.Groceries.services;
 
-import com.serper.Groceries.Ecxeptions.BanInputException;
+import com.serper.Groceries.Ecxeptions.BadInputException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -17,7 +17,7 @@ public class StoreServiceImpl implements StoreService {
 
     public void add(List<Integer> id) {
         if(id.contains(null)){
-            throw new BanInputException("Вводить можно только числа");
+            throw new BadInputException("Вводить можно только числа");
         }
         orderList.addAll(id);
     }
